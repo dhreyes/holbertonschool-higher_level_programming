@@ -8,10 +8,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *step = list, *jump = list;
 
-	if (!list)
-		return (0);
 
-	while (jump)
+	while (jump && jump->next)
 	{
 		step = step->next;
 		jump = (jump->next)->next;
