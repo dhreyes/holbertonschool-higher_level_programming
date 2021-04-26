@@ -9,7 +9,7 @@ int check_cycle(listint_t *list)
 	listint_t *step = list, *jump = list;
 
 
-	while (jump && jump->next)
+	while (step && jump && jump->next)
 	{
 		step = step->next;
 		jump = (jump->next)->next;
