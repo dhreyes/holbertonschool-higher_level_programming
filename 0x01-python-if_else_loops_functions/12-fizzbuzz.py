@@ -11,5 +11,5 @@ def fizzbuzz():
                 print("Buzz", end="")
         if i != 100:
             print(" ", end="")
-        print(" ", end="")
         i += 1
+    print(" ", end="")
