@@ -36,7 +36,7 @@ class Square:
 
     def my_print(self):
         """ Class method for Square to be printed with nested loop """
-        if self.size < 0:
+        if self.__size < 0:
             print("")
         else:
             for x in range(0, self.__size):
