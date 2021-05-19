@@ -4,6 +4,8 @@
 
 class Square:
     """ class Square with an int size equal to or greather than zero """
+    err_msg = "position must be a tuple of 2 positive integers"
+
     def __init__(self, size=0, position=(0, 0)):
         """ Function to initialize the square given the size """
 
@@ -15,12 +17,12 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         if type(position) is not tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(self.err_msg)
         if len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(self.err_msg)
         for iter in position:
             if type(iter) is not int:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError(self.err_msg)
         self.__size = size
         self.__position = position
 
