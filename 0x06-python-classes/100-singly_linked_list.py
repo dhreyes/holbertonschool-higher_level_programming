@@ -32,6 +32,7 @@ class Node:
             raise TypeError('next_node must be a Node object')
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """ This class will be for the actual linked list """
     def __init__(self):
@@ -56,11 +57,10 @@ class SinglyLinkedList:
             change_node.next_node = new_node
 
     def __str__(self):
-        """ This will allow the main function to print the values of the list """
+        """ This will allow the main function to print the values of list """
         linklist = []
         change_node = self.__head
         while change_node is not None:
             linklist.append(str(change_node.data))
             change_node = change_node.next_node
         return ('\n'.join(linklist))
-
