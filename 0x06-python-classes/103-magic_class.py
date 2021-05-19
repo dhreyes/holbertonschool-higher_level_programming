@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ This is to test our ByteCode interpretation skills """
+import math
 
 
 class MagicClass:
