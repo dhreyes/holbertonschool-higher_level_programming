@@ -7,7 +7,7 @@ class MagicClass:
     def __init__(self, radius):
         """ Method to initialize radius of the circle """
         """ Validate input for radius """
-        self.__radius = 0
+        self.__radius = radius
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
         self.__radius = radius
