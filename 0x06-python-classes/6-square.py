@@ -12,8 +12,19 @@ class Square:
         """ Validates the value passed to make sure that it meets reqs """
 
         """ size is the new size for the size portion of Square """
-        self.__size = size
-        self.__position = position
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        if type(position) is not tuple:
+            raise TypeError(self.err_msg)
+        if len(position) != 2:
+            raise TypeError(self.err_msg)
+        for iter in position:
+            if type(iter) is not int:
+                raise TypeError(self.err_msg)
+        self.size = size
+        self.position = position
 
     def area(self):
         """ Calculates the area of class Square """
