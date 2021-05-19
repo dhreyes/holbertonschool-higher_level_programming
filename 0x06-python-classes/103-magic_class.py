@@ -5,7 +5,7 @@ import math
 
 class MagicClass:
     """ Magic Class for dealing with a circle """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ Method to initialize radius of the circle """
         """ Validate input for radius """
         self.__radius = radius
