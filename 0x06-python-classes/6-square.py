@@ -39,7 +39,7 @@ class Square:
         """ Class method for Square to be printed with nested loop """
 
         """ Also contains additional 2 loops for implementing position """
-        if self.__size < 0:
+        if self.__size == 0:
             print("")
         else:
             for pos_idx_1 in range(0, self.__position[1]):
