@@ -1,0 +1,56 @@
+Add integer test file
+---------------------
+
+Makes use of function add_integer
+---------------------------------
+test 0:
+	Import Func
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+
+test 1:
+	>>> add_integer(2, 4)
+	6
+
+test 2:
+	>>> add_integer("hi", 77)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+test 3:
+	>>> add_integer(0)
+	98
+
+test 4:
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+test 5:
+	>>> add_integer(-1, 2)
+	1
+
+test 6:
+	>>> add_integer(-1, -1)
+	-2
+
+test 7:
+	>>> add_integer(2.1, 2.1)
+	4
+
+test 8:
+	>>> add_integer(-2.1)
+	96
+
+test 9:
+	>>> add_integer(3)
+	101
+
+test 10:
+	>>> add_integer(1, "hi")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+test 11:
+	>>> add_integer(0)
+	98

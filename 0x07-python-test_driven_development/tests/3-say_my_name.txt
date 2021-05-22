@@ -1,0 +1,30 @@
+"""
+Say my name task 2
+------------------
+
+Test printing first name and last name
+--------------------------------------
+
+test 0:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+test 1:
+	>>> say_my_name("hello", "world")
+	My name is hello world
+
+test 2:
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+test 3:
+	>>> say_my_name(123, "bob")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+test 4:
+	>>> say_my_name("Bob", 123)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+
+"""
