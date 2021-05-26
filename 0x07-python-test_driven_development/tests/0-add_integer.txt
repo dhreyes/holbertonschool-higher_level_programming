@@ -54,3 +54,15 @@ test 10:
 test 11:
 	>>> add_integer(0)
 	98
+
+test 12:
+	>>>type(add_integer(10e500**2, 1))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+
+test 13:
+	>>>type(add_integer(float('nan'), -2))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
