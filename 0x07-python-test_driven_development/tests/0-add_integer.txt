@@ -9,8 +9,8 @@ test 0:
 
 
 test 1:
-	>>> add_integer(2, 4)
-	6
+	>>> add_integer(0, 0)
+	0
 
 test 2:
 	>>> add_integer("hi", 77)
@@ -18,8 +18,8 @@ test 2:
 	TypeError: a must be an integer
 
 test 3:
-	>>> add_integer(0)
-	98
+	>>> add_integer(-10.5, 8)
+	-2
 
 test 4:
 	>>> add_integer(None)
@@ -56,13 +56,11 @@ test 11:
 	98
 
 test 12:
-	>>>type(add_integer(10e500**2, 1))
+	>>> type(add_integer(10e500**2, 1))
 	Traceback (most recent call last):
-	...
 	OverflowError: cannot convert float infinity to integer
 
 test 13:
-	>>>type(add_integer(float('nan'), -2))
+	>>> type(add_integer(float('nan'), -2))
 	Traceback (most recent call last):
-	...
 	ValueError: cannot convert float NaN to integer
