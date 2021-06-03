@@ -1,0 +1,42 @@
+Test cases, go test cases!
+--------------------------
+
+Test 0:
+	Import the mcguffin
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+--------------------------
+
+Test 1:
+	Given test from holby
+
+
+--------------------------
+
+Test 2:
+	pass a list
+
+
+--------------------------
+
+Test 3:
+	undefined object
+
+
+--------------------------
+
+Test 4:
+	negative input
+
+
+--------------------------
+
+Test 5:
+	parent object
+
+--------------------------
+
+Test 6:
+	empty list
+
