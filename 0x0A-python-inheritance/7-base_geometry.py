@@ -21,9 +21,9 @@ class BaseGeometry():
         """ find area """
         raise Exception("area() is not implemented")
 
-    def integer_validator(self, name, inty):
+    def integer_validator(self, name, value):
         """ validate ints aka value """
-        if type(inty) is not int:
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
-        if inty <= 0:
+        if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
