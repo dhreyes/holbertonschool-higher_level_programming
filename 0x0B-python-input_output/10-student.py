@@ -28,6 +28,8 @@ class Student:
 
     def to_json(self, attrs=None):
         """ returns dictionary form of student """
-        if (type(attrs) is list and all(type(value) is str for value in attrs)):
-            return {keys: getattr(self, keys) for keys in attrs if hasattr(self, keys)}
+        if (type(attrs) is list and
+                all(type(value) is str for value in attrs)):
+            return {keys: getattr(self, keys) for keys in
+                    attrs if hasattr(self, keys)}
         return self.__dict__
