@@ -15,4 +15,3 @@ and boolean) for JSON serialization of an object:
 def class_to_json(obj):
     """ return dictionary format of an object """
     return obj.__dict__
-
