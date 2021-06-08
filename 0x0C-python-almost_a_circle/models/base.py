@@ -33,12 +33,13 @@ class Base:
             if list_objs is None:
                 myFile.write("[]")
             else:
-                list_dictionaries = [iter.to_dictionary() for iter in list_objs]
+                list_dictionaries = [iter.to_dictionary() for
+                                     iter in list_objs]
             myFile.write(cls.to_json_string(list_dictionaries))
 
     @staticmethod
     def from_json_string(json_string):
-        """ method to return the list of the JSON string rep from json_string """
+        """ method to return the list of the JSON string rep from string """
         import json
 
         if json_string is None or len(json_string) is 0:

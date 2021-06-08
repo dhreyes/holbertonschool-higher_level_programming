@@ -38,10 +38,10 @@ class Square(Rectangle):
             if "size" in kwargs:
                 self.width = kwargs['size']
 
-
     def __str__(self):
         """ returns str rep of the object square """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.width)
 
     def to_dictionary(self):
         """ converts obj to dictionary format """

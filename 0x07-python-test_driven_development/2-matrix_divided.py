@@ -4,6 +4,8 @@
 Write a function that divides a matrix
 No importing modules
 """
+
+
 def matrix_divided(matrix, div):
     """
     Checks for valid input in matrix, implement list(map(lambda

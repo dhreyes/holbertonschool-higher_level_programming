@@ -76,3 +76,20 @@ class Square:
                         flag = 0
         if flag == 1:
             raise TypeError("position must be a tuple of 2 positive integers")
+
+    def __str__(self):
+        """ Convert to str for printing purposes """
+        string = ""
+        if self.__size == 0:
+            string = '\n'
+        else:
+            for pos_idx_1 in range(0, self.__position[1]):
+                string += '\n'
+            for x in range(0, self.__size):
+                for pos_idx_0 in range(0, self.__position[0]):
+                    string += ' '
+                for y in range(0, self.__size):
+                    string += '#'
+                string += '\n'
+            string = string[:-1]
+        return string
