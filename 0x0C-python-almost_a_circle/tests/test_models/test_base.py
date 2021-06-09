@@ -16,8 +16,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         """ Sets up the class for testing """
+        Base.__nb_objects = 0
         self.b0 = Base(0)
         self.b1 = Base(100)
         self.b2 = Base(10)
@@ -28,7 +30,6 @@ class TestBase(unittest.TestCase):
         self.b7 = Base()
         self.b8 = Base()
         self.b9 = Base()
-        print("I'm running first")
 
     def test_empty_constructors(self):
         """ tests if counter in base works correctly """
@@ -52,16 +53,18 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertEqual(Base.to_json_string([{'json': 69}, {'file': 96}]),
                          '[{"json": 69}, {"file": 96}]')
-        self.assertEqual(type(Base.to_json_string([{'json': 69},
+        self.assertIsInstance((Base.to_json_string([{'json': 69},
                                                    {'file': 96}])), str)
 
     def test_from_json_string(self):
+        """ testing from_json_string method """
         self.assertEqual(Base.from_json_string(None), '[]')
         self.assertEqual(Base.from_json_string("[]"), [])
         self.assertEqual(Base.from_json_string('[{"json": 69}, {"file": 96}]'),
                          [{"json": 69}, {"file": 96}])
-        self.assertEqual(type(Base.from_json_string('[{"json": 69},\
+        self.assertIsInstance((Base.from_json_string('[{"json": 69},\
                                                    {"file": 96}]')), list)
 
     def tearDown(self):
-        print("teehee hee")
+        """ Always runs after each test module """
+        pass
