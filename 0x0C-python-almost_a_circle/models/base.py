@@ -29,7 +29,6 @@ class Base:
         """ save json string rep of list of objects to a file """
         filename = cls.__name__ + ".json"
         with open(filename, mode="w", encoding="utf-8") as myFile:
-            list_dictionaries = []
             if list_objs is None:
                 myFile.write("[]")
             else:
