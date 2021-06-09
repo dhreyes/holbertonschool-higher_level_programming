@@ -18,26 +18,43 @@ class TestBase(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         """ set up class for testing """
-        self.r0 = Square(2, 4, 6, 8)
-        self.r1 = Square(0, 0, 0, 0)
-        self.r2 = Square(3, 4, 5, 6)
-        self.r3 = Square(100, 101, 102, 103)
-        self.r4 = Square(7, 8, 9, 10)
+        Base.__nb_objects = 0
+        self.s1 = Square(2, 2, 0, 0)
+        self.s2 = Square(6, 8, 4, 6)
+        self.s3 = Square(300, 1, 1, 200)
+        self.s4 = Square(10, 5, 3, 15)
 
     def test_id(self):
         """ tests for valid id """
-        pass
+        self.assertEqual(self.s1.id, 0)
+        self.assertEqual(self.s2.id, 6)
+        self.assertEqual(self.s3.id, 200)
+        self.assertEqual(self.s4.id, 15)
 
     def test_get_size(self):
         """ tests getter for size """
-        pass
+        self.assertEqual(self.s1.width, 2)
+        self.assertEqual(self.s2.width, 6)
+        self.assertEqual(self.s3.width, 300)
 
     def test_set_size(self):
         """ tests setter for size """
-        pass
+        self.assertEqual(self.s1.width, 2)
+        self.assertEqual(self.s2.width, 6)
+        self.assertEqual(self.s3.width, 300)
+        s5 = Square(1, 1)
+        with self.assertRaises(TypeError):
+            s5.size = "hey"
+        with self.assertRaises(TypeError):
+            s5.width = 6.5
+        with self.assertRaises(ValueError):
+            s5.size = 0
 
     def test_area(self):
         """ tests the area of class Square """
-        pass
+        self.assertEqual(self.s1.area(), 4)
+        self.assertEqual(self.s2.area(), 36)
+        self.assertEqual(self.s3.area(), 90000)

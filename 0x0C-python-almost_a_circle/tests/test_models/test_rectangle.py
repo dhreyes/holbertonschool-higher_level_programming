@@ -86,28 +86,15 @@ class TestBase(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             newrect = Rectangle(1, -1)
 
-    def test_set_x(self):
+    def test_set_x_and_y(self):
         """ test setter for x """
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            newrect = Rectangle(5, 5, 10.5)
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            newrect = Rectangle(5, 5, "string")
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             newrect = Rectangle(5, 5, -1)
-        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            newrect = Rectangle(1, 5, -15)
-
-    def test_set_y(self):
-        """ test setter for y """
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            newrect = Rectangle("string", 5)
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            newrect = Rectangle(10.5, 5)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            newrect = Rectangle(-5, 5)
-        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            newrect = Rectangle(-1, 5)
+            newrect = Rectangle(5, 5, 10, -5)
 
     def test_area(self):
         """ test area method for rectangle """
-        pass
+        self.assertEqual(self.r0.area(), 2)
+        self.assertEqual(self.r1.area(), 25)
+        self.assertEqual(self.r2.area(), 12)
