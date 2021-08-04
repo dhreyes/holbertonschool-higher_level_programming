@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 let square = '';
 const myArgs = parseInt(process.argv[2]);
 if (isNaN(myArgs)) {
