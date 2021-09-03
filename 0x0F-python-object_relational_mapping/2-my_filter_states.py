@@ -4,7 +4,7 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    user, passwd, db_name = sys.argv[1:5]
+    user, passwd, db_name, toMatch = sys.argv[1:5]
     database = MySQLdb.connect('localhost', user, passwd, db_name)
     cursor = database.cursor()
     # Execute the query
