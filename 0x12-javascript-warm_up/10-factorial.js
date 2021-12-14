@@ -9,6 +9,6 @@ function factorial (n) {
 
 let num = parseInt(process.argv[2]);
 if (isNaN(num)) {
-    num = 1;
+  num = 1;
 }
 console.log(factorial(num));
