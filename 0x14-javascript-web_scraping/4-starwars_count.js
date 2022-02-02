@@ -1,6 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
+let count = 0;
 
 request(url, (err, response, body) => {
   if (err) {
@@ -8,7 +9,6 @@ request(url, (err, response, body) => {
     return;
   }
   const films = JSON.parse(body).results;
-  let count = 0;
   const antilles = '18/';
   for (const film of films) {
       for (const character of film.characters) {
@@ -17,5 +17,5 @@ request(url, (err, response, body) => {
           }
       }
     }
-  }
-  ,console.log(count));
+  },
+  console.log(count));
