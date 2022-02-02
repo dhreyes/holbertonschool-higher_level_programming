@@ -7,14 +7,16 @@ request(url, (err, response, body) => {
     console.error(err);
     return;
   }
-  const data = JSON.parse(body);
-  const results = data.results;
-  console.log(data)
+  const films = JSON.parse(body).results;
   let count = 0;
-  for (let i = 0; i < results.length; i++) {
-    if (data.characters[i].includes('18')) {
-      count++;
+  const antilles = '18/';
+  for (const film of films) {
+      for (const character of film.characters) {
+          if (character.slice(-3) === (antilles)) {
+              count++;
+          }
+      }
     }
   }
-  console.log(count.length);
+  console.log(count);
 });
