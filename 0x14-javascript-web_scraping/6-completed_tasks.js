@@ -18,7 +18,6 @@ request(url, function (error, response, body) {
       }
     }
   }
-  for (const user in users) {
-    console.log(`${user}: ${users[user]}`);
+  console.log(users)
   }
 });
