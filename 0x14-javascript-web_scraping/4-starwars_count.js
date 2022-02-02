@@ -11,11 +11,11 @@ request(url, (err, response, body) => {
   const films = JSON.parse(body).results;
   const antilles = '18/';
   for (const film of films) {
-      for (const character of film.characters) {
-          if (character.slice(-3) === (antilles)) {
-              count++;
-          }
+    for (const character of film.characters) {
+      if (character.slice(-3) === (antilles)) {
+        count++;
       }
     }
+  }
   console.log(count);
 });
