@@ -18,6 +18,5 @@ request(url, function (error, response, body) {
       }
     }
   }
-  console.log(users)
-  }
+  console.log(users);
 });
