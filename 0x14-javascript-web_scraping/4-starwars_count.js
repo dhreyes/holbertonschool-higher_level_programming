@@ -8,6 +8,7 @@ request(url, (err, response, body) => {
     return;
   }
   const data = JSON.parse(body);
+  console.log(data)
   let count = 0;
   for (let i = 0; i < data.characters.length; i++) {
     if (data.characters[i].includes('18')) {
